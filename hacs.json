@@ -1,1 +1,5 @@
-
+{
+  "name": "Piotras Energy Donut",
+  "render_readme": true,
+  "filename": "piotras-energy-donut-loader.js"
+}
