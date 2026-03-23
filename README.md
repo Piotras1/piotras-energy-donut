@@ -195,7 +195,7 @@ devices:
 
 1. Download this repository as a ZIP file and extract it.
 2. Inside your Home Assistant `config/www/` directory, create a new folder named `piotras-energy-donut`.
-3. Copy all files from the repository into `config/www/piotras-energy-donut/`.
+3. Copy the compiled files (from `dist/` folder) into `config/www/piotras-energy-donut/`.
 4. Go to **Settings → Dashboards → Resources**.
 5. Click **Add Resource** and enter:
 ```
