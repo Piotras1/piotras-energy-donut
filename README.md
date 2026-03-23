@@ -18,11 +18,8 @@ The card focuses on clear distribution of values across multiple entities, offer
 ---
 
 ## 🧩 Layout 1: Callout Lines Mode
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/2d844fa6-46ea-4ee9-bce8-7ce154475552" width="32%" />
-  <img src="https://github.com/user-attachments/assets/46c9e786-e460-4af1-85c8-5935510bb89e" width="32%" />
-  <img src="https://github.com/user-attachments/assets/98d00170-02d0-4b31-83e5-c9f9f45b59d4" width="32%" />
-</p>
+
+![Zrzut ekranu (1031)](https://github.com/user-attachments/assets/9e155454-c70b-4ee4-ad01-1f4f2ca49864)
 
 ### Description
 A visually rich layout where each segment is connected to its label via a callout line pointing outward from the donut. Designed for dashboards with plenty of space, giving it a modern, technical look.
@@ -53,11 +50,8 @@ devices:
 ---
 
 ## 🧩 Layout 2: Legend Mode
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/cb0446a7-cab2-457b-a6c5-52df80db31ce" width="33%" />
-  <img src="https://github.com/user-attachments/assets/4ef5071a-a44a-4b57-aa0d-f2dff99637b3" width="33%" />
-  <img src="https://github.com/user-attachments/assets/9bcd11ad-8ec3-4a7c-b809-0af23c2b4ba1" width="33%" />
-</p>
+
+![Zrzut ekranu (1032)](https://github.com/user-attachments/assets/2612e798-c076-46dd-a2c7-0c9828c2f7df)
 
 ### Description
 A balanced layout combining the donut chart with a two-sided legend — entries are distributed symmetrically to the left and right of the donut. Best suited for mobile devices, narrow sidebar columns, and scenarios with a long list of sensors.
@@ -90,11 +84,8 @@ devices:
 ---
 
 ## 🧩 Layout 1 and 🧩 Layout 2 Balanced  Power & Current Monitoring
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/8b7d376a-f037-460e-8788-8bb2e097f633" width="33%" />
-  <img src="https://github.com/user-attachments/assets/b78054d9-89c7-4535-b581-a1381778e49b" width="33%" />
-  <img src="https://github.com/user-attachments/assets/264c787c-4558-479d-a6b4-22eecff78d1b" width="33%" />
-</p>
+
+![Zrzut ekranu (1033)](https://github.com/user-attachments/assets/2f95a133-5ce9-4d56-a039-16cb8afdb3e9)
 
 ### Description
 
@@ -123,11 +114,8 @@ This makes the card suitable not only for energy distribution, but also for live
 ---
 
 ## 🧩 Layout 3: Percentage Gauge Mode
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/602386db-8ef0-4945-93ca-0e5125343f69" width="33%" />
-  <img src="https://github.com/user-attachments/assets/e4e8b625-ea88-4e6b-ac42-7c6ee395cf9d" width="33%" />
-  <img src="https://github.com/user-attachments/assets/649e6b02-9674-4a3d-aa5b-0fa19fad2f4e" width="33%" />
-</p>
+
+![Zrzut ekranu (1034)](https://github.com/user-attachments/assets/50c277b8-1008-44e2-8964-e5c520c335aa)
 
 ### Description
 A dedicated layout for single-value percentage-based sensors. Always displays the ring fill — no interaction required to activate it.
