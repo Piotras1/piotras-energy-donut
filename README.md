@@ -1,5 +1,3 @@
-📸 Visual Presentation
-
 ## Piotras Energy Donut
 A highly customizable Home Assistant card designed to visualize energy consumption using an interactive donut chart.
 
@@ -18,35 +16,6 @@ The card focuses on clear distribution of values across multiple entities, offer
 - Consistent design across Piotras Cards Pack
 
 ---
-
-## ⚙️ Installation
-
-### Method 1: Via HACS (Recommended)
-
-1. Click the button below to automatically add the repository to your HACS:
-
-<a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=Piotras1&repository=piotras-energy-donut&category=plugin">
-    <img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance">
-</a>
-
-2. Click **Add** in the pop-up window.
-3. Once the repository page opens, click **Download**.
-4. After downloading, do a **Hard reload** of your browser.
-
-### Method 2: Manual Installation
-
-1. Download this repository as a ZIP file and extract it.
-2. Inside your Home Assistant `config/www/` directory, create a new folder named `piotras-energy-donut`.
-3. Copy all files from the repository into `config/www/piotras-energy-donut/`.
-4. Go to **Settings → Dashboards → Resources**.
-5. Click **Add Resource** and enter:
-```
-/local/piotras-energy-donut/piotras-energy-donut-loader.js
-```
-- Resource type: **JavaScript Module**
-6. Hard reload your browser (`Ctrl+Shift+R`).
-
----  
 
 ## 🧩 Layout 1: Callout Lines Mode
 <p align="center">
@@ -217,6 +186,35 @@ devices:
 - The card uses SVG rendering for smooth and responsive visuals
 
 ---
+
+## ⚙️ Installation
+
+### Method 1: Via HACS (Recommended)
+
+1. Click the button below to automatically add the repository to your HACS:
+
+<a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=Piotras1&repository=piotras-energy-donut&category=plugin">
+    <img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance">
+</a>
+
+2. Click **Add** in the pop-up window.
+3. Once the repository page opens, click **Download**.
+4. After downloading, do a **Hard reload** of your browser.
+
+### Method 2: Manual Installation
+
+1. Download this repository as a ZIP file and extract it.
+2. Inside your Home Assistant `config/www/` directory, create a new folder named `piotras-energy-donut`.
+3. Copy all files from the repository into `config/www/piotras-energy-donut/`.
+4. Go to **Settings → Dashboards → Resources**.
+5. Click **Add Resource** and enter:
+```
+/local/piotras-energy-donut/piotras-energy-donut-loader.js
+```
+- Resource type: **JavaScript Module**
+6. Hard reload your browser (`Ctrl+Shift+R`).
+
+---  
 
 ## ⚙️ Configuration Reference
 
