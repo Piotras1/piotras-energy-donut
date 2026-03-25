@@ -283,3 +283,6 @@ devices:
 |---|---|---|
 | `entity` | string | Entity ID of the sensor |
 | `name` | string | Display name for the segment and legend |
+
+---
+*Created by Piotras. Strictly engineered for reliability.*
