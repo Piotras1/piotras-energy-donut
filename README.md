@@ -1,5 +1,5 @@
-## Piotras Energy Donut
-### Release v1.1.0
+# Piotras Energy Donut
+### Release v1.2.0
 
 A highly customizable Home Assistant card designed to visualize energy consumption using an interactive donut chart.
 
@@ -9,7 +9,7 @@ The card focuses on clear distribution of values across multiple entities, offer
 
 - Interactive donut visualization
 - Multiple entity support
-- Automatic "Others" segment for unmeasured values
+- Automatic "Others" segment for unmeasured values (name configurable via `name_others`)
 - Configurable segment limits
 - Dynamic color assignment
 - Focus / highlight behavior with auto-dismiss timeout
@@ -33,6 +33,7 @@ A visually rich layout where each segment is connected to its label via a callou
 - Dynamic label positioning with anti-overlap correction
 - Clicking a segment highlights it and shows detailed value and percentage
 - Lines can be hidden with `show_lines: false` (labels remain visible on click)
+- Labels/legend can be hidden with `show_labels: false`
 - Designed for wide screens and large panels
 
 ### Configuration
@@ -65,6 +66,7 @@ A balanced layout combining the donut chart with a two-sided legend — entries 
 - Clear color-coded squares mapping entities to segments
 - Stable and predictable positioning
 - Better readability for analysis
+- Labels/legend can be hidden with `show_labels: false`
 
 > **Pro Tip:** Use the `limit` parameter to hide less important devices and keep the legend clean.
 
@@ -85,20 +87,23 @@ devices:
 
 ---
 
-## 🧩 Layout 1 and 🧩 Layout 2 Balanced  Power & Current Monitoring
+## 🧩 Layout 1 and 🧩 Layout 2 — Balanced Power & Current Monitoring
 
 ![Zrzut ekranu (1033)](https://github.com/user-attachments/assets/2f95a133-5ce9-4d56-a039-16cb8afdb3e9)
 
 ### Description
 
-This card is not limited to static energy data — it also excels at real-time monitoring of power (W) and current (A).
+This card is not limited to static energy data — it also excels at real-time monitoring of power (W) and current (A). Because the card renders values dynamically from any numeric sensor, it can visualize any unit your sensors provide — watts, amps, volts, or even custom values.
 
 ### Highlights
 
-- **Real-time accuracy** – Track instantaneous spikes in power and current  
-- **Flexible units** – Using the `po_opisie` variable, you can display the exact unit provided by your sensor  
+- **Real-time accuracy** – Track instantaneous spikes in power and current
+- **Flexible units** – Using the `po_opisie` variable, you can display the exact unit provided by your sensor
+- **Power monitoring (W)** – Set `po_opisie: 'W'` and point devices to watt sensors
+- **Current monitoring (A)** – Set `po_opisie: 'A'` and point devices to ampere sensors
+- **Zero decimals** – For whole-number values like watts, use `po_przecinku: 0`
 
-### Configuration
+### Power monitoring configuration
 ```yaml
 type: custom:piotras-energy-donut
 entity: sensor.total_power
@@ -111,7 +116,20 @@ devices:
   - entity: sensor.device_power_2
     name: Device 2
 ```
-This makes the card suitable not only for energy distribution, but also for live power monitoring scenarios.
+
+### Current monitoring configuration
+```yaml
+type: custom:piotras-energy-donut
+entity: sensor.total_current
+layout: 1
+po_opisie: 'A'
+po_przecinku: 2
+devices:
+  - entity: sensor.device_current_1
+    name: Device 1
+  - entity: sensor.device_current_2
+    name: Device 2
+```
 
 ---
 
@@ -124,10 +142,13 @@ A dedicated layout for single-value percentage-based sensors. Always displays th
 
 The ring fills proportionally between `min_procent` (default: `0`) and `max_procent` (default: `100`). Only `devices[0].entity` is used as the data source in this mode — the top-level `entity` field is not read.
 
+`max_procent` accepts either a fixed number or a Home Assistant entity ID — useful when the scale changes dynamically (e.g. daily energy budget from a sensor).
+
 ### Key Characteristics
 
 - Single-value gauge visualization
 - Percentage-based scale with configurable min and max
+- `max_procent` supports HA entity ID (e.g. `sensor.daily_max`)
 - Always-on display (no click required)
 - Smooth proportional ring fill
 - Clear central value indication
@@ -165,6 +186,20 @@ devices:
     name: Lenovo Battery
 ```
 
+![Zrzut ekranu (1268)](https://github.com/user-attachments/assets/c365dd59-6a33-45c2-916f-2d2307ab3a51)
+### Configuration with dynamic max from entity
+```yaml
+type: custom:piotras-energy-donut
+layout: 3
+title: Daily Usage
+po_opisie: 'kWh'
+max_procent: sensor.daily_energy_budget
+po_przecinku: 2
+devices:
+  - entity: sensor.energy_today
+    name: Today
+```
+
 ---
 
 ### 🧠 Notes
@@ -199,12 +234,12 @@ devices:
 4. Go to **Settings → Dashboards → Resources**.
 5. Click **Add Resource** and enter:
 ```
-/local/piotras-energy-donut/piotras-energy-donut-loader.js?v=1.1.0
+/local/piotras-energy-donut/piotras-energy-donut-loader.js?v=1.2.0
 ```
 - Resource type: **JavaScript Module**
 6. Hard reload your browser (`Ctrl+Shift+R`).
 
----  
+---
 
 ## ⚙️ Configuration Reference
 
@@ -218,11 +253,13 @@ devices:
 | `show_title` | boolean | `true` | all | Show or hide the title |
 | `show_line` | boolean | `true` | all | Show or hide the separator line below the title |
 | `show_lines` | boolean | `true` | 1 | Show or hide callout lines (labels remain on click) |
+| `show_labels` | boolean | `true` | 1, 2 | Show or hide the labels / legend entirely |
 | `limit` | number | `9` | 1, 2 | Maximum number of devices shown; the rest are grouped into "Others" |
+| `name_others` | string | `'Others'` | all | Custom name for the remaining/unmeasured slice |
 | `detail_timeout` | number | `15` | 1, 2 | Seconds before an active (highlighted) segment auto-deselects. Set to `0` to disable |
-| `po_opisie` | string | `'kWh'` | all | Unit label displayed next to values |
+| `po_opisie` | string | `'kWh'` | all | Unit label displayed next to values (e.g. `kWh`, `W`, `A`, `%`) |
 | `po_przecinku` | number | `2` | all | Number of decimal places for displayed values |
-| `max_procent` | number | `100` | 3 | Maximum value of the percentage scale (top of the ring) |
+| `max_procent` | string/number | `100` | 3 | Maximum value of the scale. Accepts a fixed number or a HA entity ID |
 | `min_procent` | number | `0` | 3 | Minimum value of the percentage scale (bottom of the ring) |
 | `center_label` | string | `'kWh TODAY'` | 1, 2 | Label shown below the total value in the center of the donut |
 
@@ -238,7 +275,7 @@ devices:
 | `stroke_ratio` | number | `0.079` | Ring thickness as a fraction of `svg_width` |
 | `center_y_ratio` | number | `0.55` | Vertical center of the donut as a fraction of SVG height |
 | `margin_from_chart` | number | `30` | Distance between the donut edge and callout line endpoints (Layout 1) |
-| `odleg_okreg` | number | `40` | Distance between the donut edge and the legend columns (Layout 2, 3) |
+| `odleg_okreg` | number | `40` | Distance between the donut edge and the legend columns (Layout 2) |
 
 ### Typography
 
@@ -255,11 +292,11 @@ devices:
 
 | Option | Type | Default | Description |
 |---|---|---|---|
-| `background_color` | string | HA default | Card background color |
-| `border_radius` | number | HA default | Card corner radius (px) |
+| `background_color` | string | HA default | Card background color (`transparent` to remove) |
+| `border_radius` | number | HA default | Card corner radius (px). Set `border_width: 0` to remove border entirely |
 | `border_width` | number | HA default | Card border width (px) |
-| `border_color` | string | HA default | Card border color |
-| `box_shadow` | string | HA default | Card box shadow |
+| `border_color` | string | HA default | Card border color (`transparent` to hide) |
+| `box_shadow` | string | HA default | Card box shadow (`none` to remove) |
 
 ### Colors
 
