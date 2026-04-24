@@ -1,5 +1,5 @@
 # Piotras Energy Donut
-### Release v1.2.0
+### Release v1.2.1
 
 A highly customizable Home Assistant card designed to visualize energy consumption using an interactive donut chart.
 
@@ -234,10 +234,14 @@ devices:
 4. Go to **Settings → Dashboards → Resources**.
 5. Click **Add Resource** and enter:
 ```
-/local/piotras-energy-donut/piotras-energy-donut-loader.js?v=1.2.0
+/local/piotras-energy-donut/piotras-energy-donut-loader.js?v=1.2.1
 ```
 - Resource type: **JavaScript Module**
 6. Hard reload your browser (`Ctrl+Shift+R`).
+
+---
+
+### [👁️ Piotras Kiosk: All Cards View](https://github.com/Piotras1/piotras-cards-pack)
 
 ---
 
