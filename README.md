@@ -1,3 +1,4 @@
+![GitHub All Releases](https://img.shields.io/github/downloads/Piotras1/piotras-energy-donut/total?color=brightgreen&label=HACS%20Downloads&style=flat-square)
 # Piotras Energy Donut
 ### Release v1.2.1
 
