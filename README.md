@@ -1,5 +1,8 @@
+![GitHub Downloads](https://img.shields.io/github/downloads/Piotras1/piotras-energy-donut/total?style=flat-square&logo=github)
+![GitHub Release](https://img.shields.io/github/v/release/Piotras1/piotras-energy-donut?style=flat-square)
+![HACS](https://img.shields.io/badge/HACS-Default-orange?style=flat-square)
 # Piotras Energy Donut
-### Release v1.2.1
+### Release v1.2.2
 
 A highly customizable Home Assistant card designed to visualize energy consumption using an interactive donut chart.
 
@@ -214,19 +217,23 @@ devices:
 
 ## ⚙️ Installation
 
-### Method 1: Via HACS (Recommended)
+### Method 1: Via HACS Store (Recommended)
+1. Open HACS in Home Assistant
+2. Search for **"Piotras Energy Donut"** in the store
+3. Click **Download**
+4. Hard reload your browser (`Ctrl+Shift+R`)
 
-1. Click the button below to automatically add the repository to your HACS:
+### Method 2: Via HACS Link
+1. Click the button below:
 
 <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=Piotras1&repository=piotras-energy-donut&category=plugin">
     <img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance">
 </a>
 
-2. Click **Add** in the pop-up window.
-3. Once the repository page opens, click **Download**.
-4. After downloading, do a **Hard reload** of your browser.
+2. Click **Add** → **Download**
+3. Hard reload your browser
 
-### Method 2: Manual Installation
+### Method 3: Manual Installation
 
 1. Download this repository as a ZIP file and extract it.
 2. Inside your Home Assistant `config/www/` directory, create a new folder named `piotras-energy-donut`.
@@ -234,7 +241,7 @@ devices:
 4. Go to **Settings → Dashboards → Resources**.
 5. Click **Add Resource** and enter:
 ```
-/local/piotras-energy-donut/piotras-energy-donut-loader.js?v=1.2.1
+/local/piotras-energy-donut/piotras-energy-donut-loader.js?v=1.2.2
 ```
 - Resource type: **JavaScript Module**
 6. Hard reload your browser (`Ctrl+Shift+R`).
