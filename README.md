@@ -1,6 +1,12 @@
-![GitHub Downloads](https://img.shields.io/github/downloads/Piotras1/piotras-energy-donut/total?style=flat-square&logo=github)
-![GitHub Release](https://img.shields.io/github/v/release/Piotras1/piotras-energy-donut?style=flat-square)
 ![HACS](https://img.shields.io/badge/HACS-Default-orange?style=flat-square)
+![GitHub Downloads](https://img.shields.io/github/downloads/Piotras1/piotras-energy-donut/total?style=flat-square&logo=github)
+![GitHub Stars](https://img.shields.io/github/stars/Piotras1/piotras-energy-donut?style=flat-square&logo=github&label=stars&color=brightgreen)
+![GitHub Issues](https://img.shields.io/github/issues/Piotras1/piotras-energy-donut?style=flat-square&logo=github&label=issues)
+![GitHub Release](https://img.shields.io/github/v/release/Piotras1/piotras-energy-donut?style=flat-square)
+![GitHub Release Date](https://img.shields.io/github/release-date/Piotras1/piotras-energy-donut?style=flat-square&logo=github&label=released)
+
+[![GitHub Discussions](https://img.shields.io/badge/Discussions-Join%20the%20community-blueviolet?style=flat-square&logo=github)](https://github.com/Piotras1/piotras-energy-donut/discussions)
+![GitHub Discussions](https://img.shields.io/github/discussions/Piotras1/piotras-energy-donut?style=flat-square&logo=github&label=discussions&color=blueviolet)
 # Piotras Energy Donut
 ### Release v1.2.2
 
